@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('deposit_id', models.BigIntegerField(primary_key=True, serialize=False)),
                 ('deposit_amount', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('deposit_creation_time', models.DateTimeField(auto_now_add=True, verbose_name='date created')),
-                ('account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='deposits', to='transactions.account')),
+                ('account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='deposits', to='myapp.account')),
             ],
         ),
         migrations.CreateModel(
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('withdraw_id', models.BigIntegerField(primary_key=True, serialize=False)),
                 ('withdraw_amount', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('withdraw_creation_time', models.DateTimeField(auto_now_add=True, verbose_name='date created')),
-                ('account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='withdrawals', to='transactions.account')),
+                ('account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='withdrawals', to='myapp.account')),
             ],
         ),
     ]
