@@ -1,4 +1,13 @@
 {%extends "base.html"%} {%block title%} Home Page {%endblock%}
 {%block content%}
 <p>This is our home page</p>
+{% for accounts in accounts%}
+<H3>Welcome to the app: {{accounts.account_name}}</H3>
+<H4>Your current account balance is: {{accounts.account_balance}}</H4>
+<h5>What would you like to do ?</h5>
+<div>
+    <button>Deposit</button>
+    <button>Withdraw</button>
+</div>
+{%endfor%}
 {%endblock%}
